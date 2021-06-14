@@ -98,6 +98,10 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -190,8 +194,8 @@
     <scm>
         <tag>main</tag>
         <url>https://github.com/doytowin/doyto-oss-parent</url>
-        <connection>scm:git:git@github.com:doytowin/doyto-oss-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:doytowin/doyto-oss-parent.git</developerConnection>
+        <connection>scm:git:https://github.com/doytowin/doyto-oss-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/doytowin/doyto-oss-parent.git</developerConnection>
     </scm>
 
     <organization>
