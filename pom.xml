@@ -24,7 +24,8 @@
         <sonar.organization>doytowin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
-        <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
+        <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/</distribution.snapshots.url>
+        <distribution.releases.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.releases.url>
     </properties>
 
     <repositories>
@@ -45,12 +46,12 @@
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>
-            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+            <url>${distribution.snapshots.url}</url>
         </snapshotRepository>
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>${distribution.releases.url}/</url>
         </repository>
     </distributionManagement>
 
