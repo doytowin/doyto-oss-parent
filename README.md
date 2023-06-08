@@ -10,7 +10,6 @@ When starting a new project, please use the already configured _parent pom_ to a
     <parent>
         <groupId>win.doyto</groupId>
         <artifactId>doyto-oss-parent</artifactId>
-        <version>2</version>
+        <version>3</version>
     </parent>
-
 ```
