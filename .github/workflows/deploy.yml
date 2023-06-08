@@ -2,8 +2,9 @@ name: Release
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+  push:
+    branches:
+      - release
 
 jobs:
   release:
@@ -13,8 +14,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
+          git config user.email "f0rb@163.com"
+          git config user.name "Forb Yuan"
 
       - name: Cache Maven packages
         uses: actions/cache@v2
