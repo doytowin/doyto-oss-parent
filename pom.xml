@@ -22,7 +22,7 @@
         <java.version>1.8</java.version>
 
         <sonar.exclusions>pom.xml</sonar.exclusions>
-        <sonar.organization>f0rb-github</sonar.organization>
+        <sonar.organization>doytowin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
         <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
