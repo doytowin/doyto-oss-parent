@@ -14,8 +14,11 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config user.email "f0rb@163.com"
-          git config user.name "Forb Yuan"
+          git config user.email ${{ vars.GH_EMAIL }}
+          git config user.name ${{ vars.GH_USERNAME }}
+          git config user.signingkey ${{ vars.GPG_KEY_ID }}
+          git config gpg.program gpg 
+          git config commit.gpgsign true
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -44,3 +47,11 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rollback on failure
+        if: failure()
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn -B release:rollback
