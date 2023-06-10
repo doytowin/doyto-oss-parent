@@ -1,5 +1,5 @@
-# doyto-oss-parent
-DOYToWin organization-level POM 😏
+DOYToWin Organization-Level POM
+---
 
 ## Introduction
 This project contains share parent POM for projects in DOYToWin repository.
@@ -14,21 +14,7 @@ When starting a new project, use the already configured _parent pom_ to avoid re
 </parent>
 ```
 
-Create `.github/workflows/release.yml` with following content to reuse the release workflow:
-
-```yaml
-name: Release
-
-on:
-  push:
-    branches:
-      - release
-
-jobs:
-  Call_Release_Workflow_in_doyto-oss-parent:
-    uses: doytowin/doyto-oss-parent/.github/workflows/release.yml@main
-    secrets: inherit
-```
+Using [template](https://github.com/doytowin/doyto-query-template) to create new repository will automatically contain this.
 
 ## Release Process
 
