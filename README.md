@@ -10,7 +10,8 @@ When starting a new project, use the already configured _parent pom_ to avoid re
 <parent>
     <groupId>win.doyto</groupId>
     <artifactId>doyto-oss-parent</artifactId>
-    <version>3</version>
+    <version>4</version>
+    <relativePath/>
 </parent>
 ```
 
