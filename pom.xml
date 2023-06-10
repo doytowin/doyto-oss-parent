@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +15,7 @@
     <description>DOYToWin organization-level POM</description>
 
     <properties>
-        <argLine />
+        <argLine/>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -24,8 +25,12 @@
         <sonar.organization>doytowin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
-        <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/</distribution.snapshots.url>
-        <distribution.releases.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.releases.url>
+        <distribution.snapshots.id>sonatype-nexus-snapshots</distribution.snapshots.id>
+        <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/
+        </distribution.snapshots.url>
+        <distribution.release.id>sonatype-nexus-staging</distribution.release.id>
+        <distribution.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2
+        </distribution.release.url>
     </properties>
 
     <repositories>
@@ -44,14 +49,14 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
+            <id>${distribution.snapshots.id}</id>
+            <name>Nexus Snapshots Repository</name>
             <url>${distribution.snapshots.url}</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-staging</id>
+            <id>${distribution.release.id}</id>
             <name>Nexus Release Repository</name>
-            <url>${distribution.releases.url}/</url>
+            <url>${distribution.release.url}/</url>
         </repository>
     </distributionManagement>
 
