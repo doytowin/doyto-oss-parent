@@ -117,6 +117,7 @@
                         <mavenExecutorId>forked-path</mavenExecutorId>
                         <useReleaseProfile>false</useReleaseProfile>
                         <arguments>${argLine} -P release</arguments>
+                        <tagNameFormat>v@{version}</tagNameFormat>
                     </configuration>
                 </plugin>
             </plugins>
