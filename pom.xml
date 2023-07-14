@@ -226,13 +226,8 @@
         <developer>
             <name>f0rb</name>
             <email>f0rb@163.com</email>
-            <organization>doyto.win</organization>
+            <organization>DoytoWin</organization>
         </developer>
     </developers>
-
-    <issueManagement>
-        <system>GitHub Issue Management</system>
-        <url>https://github.com/doytowin/${project.artifactId}/issues</url>
-    </issueManagement>
 
 </project>
