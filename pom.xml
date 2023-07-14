@@ -104,24 +104,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
+                    <releaseProfiles>release</releaseProfiles>
+                    <arguments>${argLine} -DskipTests</arguments>
+                    <tagNameFormat>v@{version}</tagNameFormat>
+                    <goals>lombok:delombok deploy -DsourceDirectory=target/delombok</goals>
+                    <scmCommentPrefix>[@{artifactId}] </scmCommentPrefix>
+                </configuration>
             </plugin>
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.1</version>
-                    <configuration>
-                        <mavenExecutorId>forked-path</mavenExecutorId>
-                        <useReleaseProfile>false</useReleaseProfile>
-                        <arguments>${argLine} -DskipTests -P release</arguments>
-                        <tagNameFormat>v@{version}</tagNameFormat>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 
     <profiles>
@@ -148,8 +141,19 @@
 
         <profile>
             <id>release</id>
+            <properties>
+                <lombok.sourceDirectory>src/main/java</lombok.sourceDirectory>
+                <lombok.outputDirectory>target/delombok</lombok.outputDirectory>
+                <lombok.addOutputDirectory>false</lombok.addOutputDirectory>
+            </properties>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <version>1.18.20.0</version>
+                    </plugin>
+
                     <!-- Source plugin -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -158,9 +162,8 @@
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
-                                <phase>package</phase>
                                 <goals>
-                                    <goal>jar</goal>
+                                    <goal>jar-no-fork</goal>
                                 </goals>
                             </execution>
                         </executions>
