@@ -105,6 +105,16 @@
                     <scmCommentPrefix>[@{artifactId}] </scmCommentPrefix>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.18.20.0</version>
+                <configuration>
+                    <sourceDirectory>src/main/java</sourceDirectory>
+                    <outputDirectory>target/delombok</outputDirectory>
+                    <addOutputDirectory>false</addOutputDirectory>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -132,19 +142,8 @@
 
         <profile>
             <id>release</id>
-            <properties>
-                <lombok.sourceDirectory>src/main/java</lombok.sourceDirectory>
-                <lombok.outputDirectory>target/delombok</lombok.outputDirectory>
-                <lombok.addOutputDirectory>false</lombok.addOutputDirectory>
-            </properties>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok-maven-plugin</artifactId>
-                        <version>1.18.20.0</version>
-                    </plugin>
-
                     <!-- Source plugin -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
