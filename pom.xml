@@ -22,7 +22,7 @@
 
         <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 
-        <sonar.exclusions>${project.basedir}/pom.xml</sonar.exclusions>
+        <sonar.exclusions>**/pom.xml</sonar.exclusions>
         <sonar.organization>doytowin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
@@ -114,6 +114,13 @@
                     <outputDirectory>target/delombok</outputDirectory>
                     <addOutputDirectory>false</addOutputDirectory>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.34</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
