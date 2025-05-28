@@ -5,7 +5,7 @@
 
     <groupId>win.doyto</groupId>
     <artifactId>doyto-oss-parent</artifactId>
-    <version>6-SNAPSHOT</version>
+    <version>6</version>
 
     <packaging>pom</packaging>
 
@@ -213,7 +213,7 @@
     </licenses>
 
     <scm>
-        <tag>main</tag>
+        <tag>v6</tag>
         <url>https://github.com/doytowin/doyto-oss-parent</url>
         <connection>scm:git:https://github.com/doytowin/doyto-oss-parent.git</connection>
         <developerConnection>scm:git:https://github.com/doytowin/doyto-oss-parent.git</developerConnection>
