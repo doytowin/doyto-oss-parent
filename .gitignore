@@ -3,3 +3,5 @@ target/
 *.iml
 /pom.xml.releaseBackup
 /release.properties
+ .DS_Store
+.vscode/
