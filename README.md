@@ -10,7 +10,7 @@ When starting a new project, use the already configured _parent pom_ to avoid re
 <parent>
     <groupId>win.doyto</groupId>
     <artifactId>doyto-oss-parent</artifactId>
-    <version>5</version>
+    <version>6</version>
     <relativePath/>
 </parent>
 ```
@@ -21,7 +21,7 @@ Using [template](https://github.com/doytowin/doyto-query-template) to create new
 
 1. Push local main branch to remote release branch.
 2. Check the Release workflow, if
-   1. success, release the package on https://oss.sonatype.org/.
+   1. success, release the package on https://central.sonatype.com.
    2. failed, edit local main branch and force push to remote release branch, repeat step 2.
 3. Rebase remote release branch to local main branch.
 4. Push local main branch to remote main branch.
